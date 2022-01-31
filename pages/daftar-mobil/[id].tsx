@@ -132,6 +132,7 @@ export default function DetailMobil() {
             </Box>
             <Button size='lg' w="full" bg="#ec162b" color="#fff">PESAN SEKARANG</Button>
             <Button size='lg' w="full">Test Drive</Button>
+            <Button size='lg' w="full">Download Katalog</Button>
           </Stack>
         </Stack>
       </Stack>
