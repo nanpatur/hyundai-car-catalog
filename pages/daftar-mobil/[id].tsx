@@ -126,7 +126,7 @@ export default function DetailMobil() {
                 </Tr>
                 <Tr>
                   <Td fontWeight='bold'>Ukuran velg</Td>
-                  <Td>20" diameter, 9" lebar</Td>
+                  <Td>20&quot; diameter, 9&quot; lebar</Td>
                 </Tr>
               </Table>
             </Box>
