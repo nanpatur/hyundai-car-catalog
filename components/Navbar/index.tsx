@@ -17,7 +17,7 @@ export default function Navbar() {
               <FaMapMarkerAlt color='#fff' size='24px' />
               <Box>
                 <Text fontSize='10px' fontWeight='bold' color='#fff'>ALAMAT:</Text>
-                <Text fontSize='16px' fontWeight='bold' color='#fff'>Jl. Utama No.01, Bandung</Text>
+                <Text fontSize='16px' fontWeight='bold' color='#fff'>Jl. Soekarno Hatta No. 368 Bandung 40235</Text>
               </Box>
             </HStack>
             <HStack spacing='12px' display={{ base: 'none', lg: 'flex' }}>
@@ -40,7 +40,7 @@ export default function Navbar() {
               <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/')}>Beranda</Text>
             </Box>
             <Box>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/daftar-mobil')}>Daftar Mobil</Text>
+              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/katalog-mobil')}>Katalog Mobil</Text>
             </Box>
             <Box>
               <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/simulasi-kredit')}>Simulasi Kredit</Text>

@@ -26,7 +26,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-export default function Testimonial() {
+export default function Testimonial({ testimoniList }: any) {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState<Slider | null>(null);
@@ -38,23 +38,6 @@ export default function Testimonial() {
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
-  const cards = [
-    {
-      title: "Pelanggan 1",
-      carType: "Civic Hatchback",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-    },
-    {
-      title: "Pelanggan 2",
-      carType: "Civic Hatchback",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-    },
-    {
-      title: "Pelanggan 3",
-      carType: "Civic Hatchback",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters. The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters. The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters. The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-    },
-  ];
 
   return (
     <Box
@@ -79,8 +62,8 @@ export default function Testimonial() {
       <Text fontWeight='bold' fontSize="32px"  align='center'>TESTIMONI</Text>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((card, index) => (
-          <Box key={index} position="relative">
+        {testimoniList.map((testimoni: any) => (
+          <Box key={testimoni.id} position="relative">
             {/* This is the block you need to change, to customize the caption */}
             <Container maxW="container.lg" height="400px" position="relative" p='0'>
               <Stack
@@ -94,7 +77,7 @@ export default function Testimonial() {
                 px="16px"
               >
                 <Box
-                  backgroundImage="url(https://www.honda-indonesia.com/uploads/images/models/variants/type__1605158714061.png)"
+                  backgroundImage={`url(${testimoni.picture_url})`}
                   backgroundSize="contain"
                   backgroundPosition="center"
                   backgroundRepeat="no-repeat"
@@ -104,9 +87,9 @@ export default function Testimonial() {
                 />
                 <Box w='full'>
                   <Stack spacing="0">
-                    <Text fontWeight='bold' fontSize="24px" align={{ base: "center", lg: "left" }}>{card.title}</Text>
+                    <Text fontWeight='bold' fontSize="24px" align={{ base: "center", lg: "left" }}>{testimoni.name}</Text>
                     <Text fontWeight="bold" color="gray" align={{ base: "center", lg: "left" }}>
-                      {card.carType}
+                      {testimoni.car_type}
                     </Text>
                     <Text
                       fontSize={{ base: "md", lg: "lg" }}
@@ -115,7 +98,7 @@ export default function Testimonial() {
                       align={{ base: "center", lg: "left" }}
                       noOfLines={5}
                     >
-                      {card.text}
+                      {testimoni.testimoni}
                     </Text>
                   </Stack>
                 </Box>

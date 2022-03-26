@@ -137,7 +137,7 @@ export default function CarListPage({ carListGrouped }: any) {
                       Rp {car.types[0].price_mt || car.types[0].price_cvt}
                     </Text>
                   </Box>
-                  <Button bg='#ec162b' colorScheme='red' w='150px' onClick={() => router.push(`/daftar-mobil/${car.name}`)} borderRadius='12px'>Lihat Detail</Button>
+                  <Button bg='#ec162b' colorScheme='red' w='150px' onClick={() => router.push(`/katalog-mobil/${car.name}`)} borderRadius='12px'>Lihat Detail</Button>
                 </Stack>
               </Stack>
             </GridItem>
