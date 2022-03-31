@@ -3,11 +3,6 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { ReactElement } from 'react';
 import CaptionCarousel from '../components/Carousel'
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from 'react-icons/io5';
 import { FaCarSide, FaDollarSign, FaPercentage, FaRegHandshake, FaTools, FaWallet } from 'react-icons/fa';
 import Testimonial from '../components/Testimonial';
 import axios from 'axios';
@@ -18,23 +13,6 @@ interface FeatureProps {
   iconBg: string;
   icon?: ReactElement;
 }
-
-const Feature = ({ text, icon, iconBg }: FeatureProps) => {
-  return (
-    <Stack direction={'row'} align={'center'}>
-      <Flex
-        w={8}
-        h={8}
-        align={'center'}
-        justify={'center'}
-        rounded={'full'}
-        bg={iconBg}>
-        {icon}
-      </Flex>
-      <Text fontWeight={600}>{text}</Text>
-    </Stack>
-  );
-};
 
 const SplitWithImage = () => {
   return (
@@ -123,6 +101,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
   const router = useRouter()
   const carList = Object.keys(carListGrouped).map((key) => carListGrouped[key]).slice(0, 3);
+  const formatCurrency = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumSignificantDigits: 3 })
+  
   return (
     <>
       <Head>
@@ -178,7 +158,7 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
                             <Center h='full' w='full' position='absolute' zIndex='9' p='12px' top='0' right='0'>
                               <Box align='right' w='full'>
                                 <Text fontSize='10px'>Mulai dari</Text>
-                                <Text fontSize='16px' fontWeight='bold'>Rp {car.types[0].price_mt || car.types[0].price_cvt}</Text>
+                                <Text fontSize='16px' fontWeight='bold'>{formatCurrency.format(car.types[0].price_mt || car.types[0].price_cvt)}</Text>
                               </Box>
                             </Center>
                             <Box bg='#ec162b' transform='skewX(-15deg)' h='full' w='full' position='absolute' top='0'></Box>
