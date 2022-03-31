@@ -85,7 +85,7 @@ export default function DetailMobil({ carData }: any) {
                 height='350px'
                 alt='car'
               />
-              <Grid templateColumns={{base: "repeat(4, 1fr)", lg: "repeat(6, 1fr)" }} gap={2}>
+              <Grid templateColumns={{base: "repeat(3, 1fr)", lg: "repeat(6, 1fr)" }} gap={2}>
                 {
                   carData.picture_urls.map((url: string, idx: number) => (
                     <Box
@@ -110,7 +110,7 @@ export default function DetailMobil({ carData }: any) {
               </Grid>
               <Stack>
                 <Text fontSize='18px' fontWeight='bold'>DAFTAR HARGA</Text>
-                <Box border='1px solid #ddd' borderRadius='4px'>
+                <Box border='1px solid #ddd' borderRadius='4px' overflow='auto'>
                   <Table border='1'>
                     <Thead>
                       <Tr>
@@ -134,7 +134,7 @@ export default function DetailMobil({ carData }: any) {
                       {
                         carData.types.map((type: any) => (
                           <Tr key={type.type}>
-                            <Td fontWeight='bold'>{type.name} {type.type}</Td>
+                            <Td fontWeight='bold' whiteSpace='nowrap'>{type.name} {type.type}</Td>
                             <Td>
                               <Text align='center'>{type.price_mt ? formatCurrency.format(type.price_mt) : '-'}</Text>
                             </Td>
@@ -153,7 +153,7 @@ export default function DetailMobil({ carData }: any) {
                 <Text fontSize='14px' fontWeight='bold'>-</Text>
               </Stack>
             </Stack>
-            <Stack maxW='250px' w='full' align='flex-start' spacing='14px'>
+            <Stack maxW={{base: 'full', lg: '250px'}} w='full' align='flex-start' spacing='14px'>
               <Box
                 color="#fff"
                 p="8px"
@@ -176,8 +176,9 @@ export default function DetailMobil({ carData }: any) {
                 >
                   <Stack spacing='14px'>
                     <Box align="center" w="full">
-                      <Text fontSize="14px">Mulai dari</Text>
-                      <Text fontSize="20px" fontWeight="bold">
+                      <Text fontSize="20px" display={{ base: 'block', lg: 'none' }}>{carData.name}</Text>
+                      <Text fontSize="14px" display={{ base: 'none', lg: 'block' }}>Mulai dari</Text>
+                      <Text fontSize="20px" fontWeight="bold" display={{ base: 'none', lg: 'block' }}>
                         {formatCurrency.format(carData.types[0].price_mt || carData.types[0].price_cvt)}
                       </Text>
                     </Box>
