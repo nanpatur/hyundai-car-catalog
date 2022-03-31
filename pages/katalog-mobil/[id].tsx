@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       objectsByKeyValue[value] = {
         ...objectsByKeyValue[value],
         name: obj["name"],
+        brochure_url: obj["brochure_url"] ? obj["brochure_url"] : objectsByKeyValue[value]?.brochure_url,
         types: (objectsByKeyValue[value]?.types || []).concat(
           obj
         ),
@@ -185,7 +186,7 @@ export default function DetailMobil({ carData }: any) {
                 </Center>
               </Box>
               <Button size='lg' w="full">Test Drive</Button>
-              <Button size='lg' w="full">Download Katalog</Button>
+              <Button size='lg' w="full" onClick={() => window.open(carData.brochure_url, '_blank')}>Download Katalog</Button>
             </Stack>
           </Stack>
         </Stack>
