@@ -9,7 +9,6 @@ import {
   IoSearchSharp,
 } from 'react-icons/io5';
 import { FaCarSide, FaDollarSign, FaPercentage, FaRegHandshake, FaTools, FaWallet } from 'react-icons/fa';
-import Footer from '../components/Footer';
 import Testimonial from '../components/Testimonial';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -216,7 +215,6 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
           </Container>
         </Center>
         {testimoniList.length && <Testimonial testimoniList={testimoniList} />}
-        <Footer />
       </Stack>
     </>
   )
