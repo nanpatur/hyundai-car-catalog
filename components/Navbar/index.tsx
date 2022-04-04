@@ -1,11 +1,9 @@
-import { Box, Button, Container, HStack, Image, Link, Spacer, Stack, Text } from "@chakra-ui/react"
-import { useRouter } from "next/router";
+import { Box, Button, Container, HStack, Image, Spacer, Stack, Text } from "@chakra-ui/react"
+import Link from "next/link";
 import { FaBars, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { getWhatsappLink } from "../../utils/whatsappLink";
 
 export default function Navbar() {
-  const router = useRouter()
-
   return (
     <Stack w='100%' spacing={0}>
       <Box bg='#333'>
@@ -36,27 +34,25 @@ export default function Navbar() {
       <Box shadow='0 0 4px rgb(0 0 0 / 40%)' display={{ base: 'none', lg: 'block' }}>
         <Container maxW='container.lg'>
           <HStack h='100%' spacing='0'>
-            <Box>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/')}>Beranda</Text>
-            </Box>
-            <Box>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/katalog-mobil')}>Katalog Mobil</Text>
-            </Box>
-            <Box>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/simulasi-kredit')}>Simulasi Kredit</Text>
-            </Box>
-            <Box>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/test-drive')}>Test Drive</Text>
-            </Box>
-            <Box>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}} onClick={() => router.push('/sparepart')}>Sparepart</Text>
-            </Box>
-            <Spacer />
-            <Link href={getWhatsappLink('')} target='_blank'>
-              <Box bg='#ec162b'>
-                <Text fontSize='16px' fontWeight='bold' p='16px' color='#fff' cursor='pointer'>HUBUNGI KAMI</Text>
-              </Box>
+            <Link href='/' passHref>
+              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Beranda</Text>
             </Link>
+            <Link href='/katalog-mobil' passHref>
+              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Katalog Mobil</Text>
+            </Link>
+            <Link href='/simulasi-kredit' passHref>
+              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Simulasi Kredit</Text>
+            </Link>
+            <Link href='/test-drive' passHref>
+              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Test Drive</Text>
+            </Link>
+            <Link href='/sparepart' passHref>
+              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Sparepart</Text>
+            </Link>
+            <Spacer />
+            <Box bg='#ec162b' onClick={() => window.open(getWhatsappLink(''), '_blank')}>
+              <Text fontSize='16px' fontWeight='bold' p='16px' color='#fff' cursor='pointer'>HUBUNGI KAMI</Text>
+            </Box>
           </HStack>
         </Container>
       </Box>

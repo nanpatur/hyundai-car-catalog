@@ -11,10 +11,12 @@ import {
   IconButton,
   useColorModeValue,
   Image,
+  Spacer,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
+import { useRouter } from 'next/router';
 
 const Logo = (props: any) => {
   return (
@@ -75,58 +77,26 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <Box
       bg='#333'
       color={useColorModeValue('gray.700', 'gray.200')}
       w='100%'>
       <Container as={Stack} maxW={'container.lg'} py={10}>
-        <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 2fr' }}
-          spacing={8}>
+        <Stack direction={{ base: 'column', lg: 'row' }} align='center'>
           <Box minW='250px'>
             <Image src='/images/honda-logo.png' alt='logo' height='80px' />
           </Box>
-          <Stack align={'flex-start'} color='#fff'>
-            <ListHeader>Company</ListHeader>
-            <Link href={'#'}>About us</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Contact us</Link>
-            <Link href={'#'}>Pricing</Link>
-            <Link href={'#'}>Testimonials</Link>
+          <Spacer />
+          <Stack direction={{ base: 'column', lg: 'row' }} h='100%' spacing='24px'>
+            <Text whiteSpace='nowrap' color='#ddd' fontSize='16px' fontWeight='bold' cursor='pointer' _hover={{ color: '#fff'}} onClick={() => router.push('/')}>Beranda</Text>
+            <Text whiteSpace='nowrap' color='#ddd' fontSize='16px' fontWeight='bold' cursor='pointer' _hover={{ color: '#fff'}} onClick={() => router.push('/katalog-mobil')}>Katalog Mobil</Text>
+            <Text whiteSpace='nowrap' color='#ddd' fontSize='16px' fontWeight='bold' cursor='pointer' _hover={{ color: '#fff'}} onClick={() => router.push('/simulasi-kredit')}>Simulasi Kredit</Text>
+            <Text whiteSpace='nowrap' color='#ddd' fontSize='16px' fontWeight='bold' cursor='pointer' _hover={{ color: '#fff'}} onClick={() => router.push('/test-drive')}>Test Drive</Text>
+            <Text whiteSpace='nowrap' color='#ddd' fontSize='16px' fontWeight='bold' cursor='pointer' _hover={{ color: '#fff'}} onClick={() => router.push('/sparepart')}>Sparepart</Text>
           </Stack>
-          <Stack align={'flex-start'} color='#fff'>
-            <ListHeader>Support</ListHeader>
-            <Link href={'#'}>Help Center</Link>
-            <Link href={'#'}>Terms of Service</Link>
-            <Link href={'#'}>Legal</Link>
-            <Link href={'#'}>Privacy Policy</Link>
-            <Link href={'#'}>Satus</Link>
-          </Stack>
-          <Stack align={'flex-start'} color='#fff'>
-            <ListHeader>Stay up to date</ListHeader>
-            <Stack direction={'row'} w='100%'>
-              <Input
-                placeholder={'Your email address'}
-                bg='#fff'
-                border={0}
-                w='100%'
-                _focus={{
-                  bg: 'whiteAlpha.300',
-                }}
-              />
-              <IconButton
-                bg={useColorModeValue('green.400', 'green.800')}
-                color={useColorModeValue('white', 'gray.800')}
-                _hover={{
-                  bg: 'green.600',
-                }}
-                aria-label="Subscribe"
-                icon={<BiMailSend />}
-              />
-            </Stack>
-          </Stack>
-        </SimpleGrid>
+        </Stack>
       </Container>
     </Box>
   );

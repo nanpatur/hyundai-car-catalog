@@ -170,7 +170,7 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
                 }
               </Grid>
               <Center w='100%' pt='24px'>
-                <Button colorScheme='black' variant='outline' onClick={() => router.push('/katalog-mobil')}>Lihat Semua Mobil</Button>
+                <Button colorScheme='black' variant='outline' onClick={() => router.push('/katalog-mobil', undefined, { scroll: true })}>Lihat Semua Mobil</Button>
               </Center>
             </Stack>
           </Container>
