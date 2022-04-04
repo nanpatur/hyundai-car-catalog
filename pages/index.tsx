@@ -1,18 +1,11 @@
-import { Box, Button, Center, Container, Flex, Grid, GridItem, Heading, HStack, Icon, Image, SimpleGrid, Spacer, Stack, StackDivider, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Center, Container, Flex, Grid, GridItem, Heading, HStack, Icon, Image, SimpleGrid, Spacer, Stack, StackDivider, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react'
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import { ReactElement } from 'react';
 import CaptionCarousel from '../components/Carousel'
 import { FaCarSide, FaDollarSign, FaPercentage, FaRegHandshake, FaTools, FaWallet } from 'react-icons/fa';
 import Testimonial from '../components/Testimonial';
 import axios from 'axios';
 import { useRouter } from 'next/router';
-
-interface FeatureProps {
-  text: string;
-  iconBg: string;
-  icon?: ReactElement;
-}
 
 const SplitWithImage = () => {
   return (
@@ -102,7 +95,7 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
   const router = useRouter()
   const carList = Object.keys(carListGrouped).map((key) => carListGrouped[key]).slice(0, 3);
   const formatCurrency = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumSignificantDigits: 3 })
-  
+
   return (
     <>
       <Head>

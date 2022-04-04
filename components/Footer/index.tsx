@@ -84,7 +84,7 @@ export default function Footer() {
       color={useColorModeValue('gray.700', 'gray.200')}
       w='100%'>
       <Container as={Stack} maxW={'container.lg'} py={10}>
-        <Stack direction={{ base: 'column', lg: 'row' }} align='center'>
+        <Stack direction={{ base: 'column', lg: 'row' }} align={{ base: 'flex-start', lg: 'center' }}>
           <Box minW='250px'>
             <Image src='/images/honda-logo.png' alt='logo' height='80px' />
           </Box>

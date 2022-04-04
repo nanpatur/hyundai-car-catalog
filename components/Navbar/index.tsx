@@ -1,9 +1,12 @@
-import { Box, Button, Container, HStack, Image, Spacer, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Container, HStack, Image, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react"
 import Link from "next/link";
 import { FaBars, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { getWhatsappLink } from "../../utils/whatsappLink";
+import DrawerMenu from "../Drawer";
 
 export default function Navbar() {
+  const { isOpen: isOpenMenu, onOpen: onOpenMenu, onClose: onCloseMenu } = useDisclosure()
+
   return (
     <Stack w='100%' spacing={0}>
       <Box bg='#333'>
@@ -26,7 +29,7 @@ export default function Navbar() {
               </Box>
             </HStack>
             <Box display={{ base: 'block', lg: 'none' }}>
-              <FaBars color='#fff' size='24px' />
+              <FaBars color='#fff' size='24px' onClick={onOpenMenu} />
             </Box>
           </HStack>
         </Container>
@@ -56,6 +59,7 @@ export default function Navbar() {
           </HStack>
         </Container>
       </Box>
+      <DrawerMenu isOpen={isOpenMenu} onClose={onCloseMenu} />
     </Stack>
   )
 }
