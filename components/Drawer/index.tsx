@@ -51,7 +51,7 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
               <Text
                 onClick={onClose}
                 bg={
-                  router.pathname === "/katalog-mobil" ? "#eee" : "transparent"
+                  router.pathname.startsWith("/katalog-mobil") ? "#eee" : "transparent"
                 }
                 fontSize="16px"
                 fontWeight="bold"
@@ -66,7 +66,7 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
               <Text
                 onClick={onClose}
                 bg={
-                  router.pathname === "/simulasi-kredit"
+                  router.pathname.startsWith("/simulasi-kredit")
                     ? "#eee"
                     : "transparent"
                 }
@@ -82,7 +82,7 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
             <Link href="/test-drive" passHref>
               <Text
                 onClick={onClose}
-                bg={router.pathname === "/test-drive" ? "#eee" : "transparent"}
+                bg={router.pathname.startsWith("/test-drive") ? "#eee" : "transparent"}
                 fontSize="16px"
                 fontWeight="bold"
                 p="16px"
@@ -95,7 +95,7 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
             <Link href="/sparepart" passHref>
               <Text
                 onClick={onClose}
-                bg={router.pathname === "/sparepart" ? "#eee" : "transparent"}
+                bg={router.pathname.startsWith("/sparepart") ? "#eee" : "transparent"}
                 fontSize="16px"
                 fontWeight="bold"
                 p="16px"

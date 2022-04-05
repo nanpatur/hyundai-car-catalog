@@ -3,6 +3,7 @@ import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useState } from "react";
+import { openWhatsappLink } from "../../utils/whatsappLink";
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   const carList = await axios.get(
@@ -182,7 +183,7 @@ export default function DetailMobil({ carData }: any) {
                         {formatCurrency.format(carData.types[0].price_mt || carData.types[0].price_cvt)}
                       </Text>
                     </Box>
-                    <Button size='lg' w="full" bg="#ec162b" color="#fff" colorScheme='red'>PESAN SEKARANG</Button>
+                    <Button size='lg' w="full" bg="#ec162b" color="#fff" colorScheme='red' onClick={() => openWhatsappLink('')}>PESAN SEKARANG</Button>
                   </Stack>
                 </Center>
               </Box>

@@ -1,5 +1,5 @@
 export const getWhatsappLink = (message: string) => {
-  const url = `https://wa.me/6283821821625?text=${encodeURIComponent(message)}`;
+  const url = `https://wa.me/6282128798554?text=${encodeURIComponent(message)}`;
   return url;
 }
 

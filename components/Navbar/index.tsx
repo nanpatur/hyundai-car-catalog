@@ -21,20 +21,13 @@ export default function Navbar() {
                 <Text fontSize='16px' fontWeight='bold' color='#fff'>Jl. Soekarno Hatta No. 368 Bandung 40235</Text>
               </Box>
             </HStack>
-            <HStack spacing='12px' display={{ base: 'none', lg: 'flex' }}>
-              <FaPhoneAlt color='#fff' size='24px' />
-              <Box>
-                <Text fontSize='10px' fontWeight='bold' color='#fff'>KONTAK:</Text>
-                <Text fontSize='16px' fontWeight='bold' color='#fff'>0811-2345-6789</Text>
-              </Box>
-            </HStack>
             <Box display={{ base: 'block', lg: 'none' }}>
               <FaBars color='#fff' size='24px' onClick={onOpenMenu} />
             </Box>
           </HStack>
         </Container>
       </Box>
-      <Box shadow='0 0 4px rgb(0 0 0 / 40%)' display={{ base: 'none', lg: 'block' }}>
+      <Box shadow='0 0 4px rgb(0 0 0 / 40%)' display={{ base: 'none', lg: 'block' }} bg='#fff'>
         <Container maxW='container.lg'>
           <HStack h='100%' spacing='0'>
             <Link href='/' passHref>
