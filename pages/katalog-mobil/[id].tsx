@@ -2,6 +2,7 @@ import { Box, Button, Center, Container, Grid, HStack, Spacer, Stack, Table, Tbo
 import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { openWhatsappLink } from "../../utils/whatsappLink";
 
@@ -65,6 +66,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 export default function DetailMobil({ carData }: any) {
   const [shownPictureIdx, setShownPictureIdx] = useState(0);
   const formatCurrency = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumSignificantDigits: 3 })
+  const router = useRouter();
+  
   return (
     <>
       <Head>
@@ -183,11 +186,11 @@ export default function DetailMobil({ carData }: any) {
                         {formatCurrency.format(carData.types[0].price_mt || carData.types[0].price_cvt)}
                       </Text>
                     </Box>
-                    <Button size='lg' w="full" bg="#ec162b" color="#fff" colorScheme='red' onClick={() => openWhatsappLink('')}>PESAN SEKARANG</Button>
+                    <Button size='lg' w="full" bg="#ec162b" color="#fff" colorScheme='red' onClick={() => openWhatsappLink('info ' + carData.name)}>PESAN SEKARANG</Button>
                   </Stack>
                 </Center>
               </Box>
-              <Button size='lg' w="full">Test Drive</Button>
+              <Button size='lg' w="full" onClick={() => router.push('/test-drive')}>Test Drive</Button>
               <Button size='lg' w="full" onClick={() => window.open(carData.brochure_url, '_blank')}>Download Katalog</Button>
             </Stack>
           </Stack>
