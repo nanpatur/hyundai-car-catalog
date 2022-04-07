@@ -4,6 +4,7 @@ import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
+import Image from 'next/image';
 
 // Settings for the slider
 const settings = {
@@ -89,11 +90,14 @@ export default function Carousel({ bannerList }: any) {
             key={index}
             height={{base: '220px', lg: '500px', '2xl': '800px'}}
             position="relative"
-            backgroundRepeat="no-repeat"
-            backgroundSize='cover'
-            backgroundPosition={'center'}
-            backgroundImage={`url(${url})`}
-          />
+          >
+            <Image
+              alt={ url }
+              src={ url }
+              layout="fill"
+              objectFit="cover"
+            />
+          </Box>
         ))}
       </Slider>
     </Box>
