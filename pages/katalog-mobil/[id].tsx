@@ -2,6 +2,7 @@ import { Box, Button, Center, Container, Grid, HStack, Spacer, Stack, Table, Tbo
 import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { openWhatsappLink } from "../../utils/whatsappLink";
@@ -81,23 +82,19 @@ export default function DetailMobil({ carData }: any) {
           <Stack direction={{ base: "column", lg: "row" }} spacing='24px' align='flex-start'>
             <Stack w='full' spacing='18px'>
               <Box
-                backgroundImage={`url(${carData.picture_urls[shownPictureIdx]})`}
-                backgroundSize='contain'
-                backgroundPosition='center'
-                backgroundRepeat='no-repeat'
                 width='100%'
                 height='350px'
                 alt='car'
-              />
+                position='relative'
+              >
+                <Image src={carData.picture_urls[shownPictureIdx]} alt="car" layout='fill' objectFit='contain' />
+              </Box>
               <Grid templateColumns={{base: "repeat(3, 1fr)", lg: "repeat(6, 1fr)" }} gap={2}>
                 {
                   carData.picture_urls.map((url: string, idx: number) => (
                     <Box
+                      position='relative'
                       key={url}
-                      backgroundImage={`url(${url})`}
-                      backgroundSize='contain'
-                      backgroundPosition='center'
-                      backgroundRepeat='no-repeat'
                       backgroundColor='#eee'
                       borderRadius='4px'
                       width='110px'
@@ -107,7 +104,9 @@ export default function DetailMobil({ carData }: any) {
                       _hover={{ opacity: '1' }}
                       onClick={() => setShownPictureIdx(idx)}
                       cursor='pointer'
-                    />   
+                    >
+                      <Image src={url} alt="car" layout='fill' objectFit='contain' />
+                    </Box>   
                   ))
                 }
 

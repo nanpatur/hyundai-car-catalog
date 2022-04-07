@@ -3,6 +3,6 @@ module.exports = {
   reactStrictMode: true,
   images: {
     minimumCacheTTL: 60,
-    domains: ['www.honda-indonesia.com'],
+    domains: ['www.honda-indonesia.com', 'ik.imagekit.io'],
   },
 }
