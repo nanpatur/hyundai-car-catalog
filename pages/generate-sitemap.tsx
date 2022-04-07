@@ -34,7 +34,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
           "sitemap.xml.tsx",
           "_app.tsx",
           "_document.tsx",
-          "api"
+          "api",
+          "generate-sitemap.tsx"
         ].includes(staticPage);
       })
     .map((staticPagePath) => {
