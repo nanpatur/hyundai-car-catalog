@@ -1,4 +1,5 @@
-import { Box, Button, Container, HStack, Image, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, Container, HStack, Spacer, Stack, Text, useDisclosure } from "@chakra-ui/react"
+import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { getWhatsappLink } from "../../utils/whatsappLink";
@@ -12,7 +13,9 @@ export default function Navbar() {
       <Box bg='#333'>
         <Container maxW='container.lg'>
           <HStack h='100%' py='20px' spacing='32px'>
-            <Image src='/images/honda-logo.png' alt='logo' height={{ base: '40px', lg: '60px' }} />
+            <Box position='relative' height={{ base: '40px', lg: '60px' }} width={{ base: '146px', lg: '220px' }}>
+              <Image src='/images/honda-logo.png' alt='logo' layout='fill' />
+            </Box>
             <Spacer />
             <HStack spacing='12px' display={{ base: 'none', lg: 'flex' }}>
               <FaMapMarkerAlt color='#fff' size='24px' />

@@ -10,13 +10,13 @@ import {
   Input,
   IconButton,
   useColorModeValue,
-  Image,
   Spacer,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const Logo = (props: any) => {
   return (
@@ -86,7 +86,7 @@ export default function Footer() {
       <Container as={Stack} maxW={'container.lg'} py={10}>
         <Stack direction={{ base: 'column', lg: 'row' }} align={{ base: 'flex-start', lg: 'center' }}>
           <Box minW='250px'>
-            <Image src='/images/honda-logo.png' alt='logo' height='80px' />
+            <Image src='/images/honda-logo.png' alt='logo' height='80px' width='293px' />
           </Box>
           <Spacer />
           <Stack direction={{ base: 'column', lg: 'row' }} h='100%' spacing='24px'>
