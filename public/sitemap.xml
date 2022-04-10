@@ -7,37 +7,25 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.hondakudealerbandung.com/generate-sitemap.tsx</loc>
-        <lastmod>2022-04-07T09:01:55.768Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.hondakudealerbandung.com/index.tsx</loc>
-        <lastmod>2022-04-07T09:01:55.768Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
         <loc>https://www.hondakudealerbandung.com/katalog-mobil</loc>
         <lastmod>2022-04-07T09:01:55.768Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.hondakudealerbandung.com/simulasi-kredit.tsx</loc>
+        <loc>https://www.hondakudealerbandung.com/simulasi-kredit</loc>
         <lastmod>2022-04-07T09:01:55.768Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.hondakudealerbandung.com/sparepart.tsx</loc>
+        <loc>https://www.hondakudealerbandung.com/sparepart</loc>
         <lastmod>2022-04-07T09:01:55.768Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.hondakudealerbandung.com/test-drive.tsx</loc>
+        <loc>https://www.hondakudealerbandung.com/test-drive</loc>
         <lastmod>2022-04-07T09:01:55.768Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
