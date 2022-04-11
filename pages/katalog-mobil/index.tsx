@@ -62,6 +62,10 @@ export default function CarListPage({ carListGrouped }: any) {
     <>
       <Head>
         <title>Katalog Mobil | Hondaku</title>
+        <meta
+          name="description"
+          content="Katalog dan harga Mobil Honda terbaru dan terlengkap."
+        />
       </Head>
       <Container maxW="container.lg" py="24px">
         <Stack spacing="32px">

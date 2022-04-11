@@ -52,7 +52,10 @@ export default function SimulasiKredit({ carListGrouped }: any) {
     <>
       <Head>
         <title>Simulasi Kredit | Hondaku</title>
-        <meta name="description" content="Dapatkan informasi lengkap seputar pembelian mobil Honda terbaru disini." />
+        <meta 
+          name="description"
+          content="Kami bekerja sama dengan lembaga pembiayaan resmi dan terpercaya dengan suku bunga yang kompetitif. Dapatkan simulasi kredit DP dan angsuran murah mobil Honda impian Anda secara gratis."
+        />
       </Head>
       <Container maxW="container.lg" py="24px">
         <Center>

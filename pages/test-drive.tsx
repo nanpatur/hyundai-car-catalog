@@ -35,7 +35,10 @@ export default function TestDrive({ carListGrouped }: any) {
     <>
       <Head>
         <title>Test Drive | Hondaku</title>
-        <meta name="description" content="Dapatkan informasi lengkap seputar pembelian mobil Honda terbaru disini." />
+        <meta
+          name="description"
+          content="Layanan Test Drive gratis, pilih mobilnya dan jadwalkan."
+        />
       </Head>
       <Container maxW="container.lg" py="24px">
         <Center>

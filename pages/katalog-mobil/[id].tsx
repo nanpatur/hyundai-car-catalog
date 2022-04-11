@@ -73,6 +73,10 @@ export default function DetailMobil({ carData }: any) {
     <>
       <Head>
         <title>{carData.name} | Hondaku</title>
+        <meta
+          name="description"
+          content={`Informasi lengkap mobil Honda ${carData.name}`}
+        />
       </Head>
       <Container maxW="container.lg" py="24px">
         <Stack spacing='24px'>

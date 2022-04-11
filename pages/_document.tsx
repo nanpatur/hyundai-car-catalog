@@ -5,6 +5,10 @@ export default function Document() {
     <Html>
       <Head>
         <meta
+          name="keywords"
+          content="mobil honda,mobil bandung,honda bandung,honda promo,honda terbaru,honda terlengkap,honda termurah,honda terbaru bandung,honda terbaru"
+        />
+        <meta
           name="google-site-verification"
           content="2FQs8V7ilW56zeGFAkvWRAs9wON8ZSsnCWszNZu4HNI"
         />

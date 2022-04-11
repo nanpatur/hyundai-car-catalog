@@ -143,7 +143,7 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
         <title>Honda Indonesia The Power Of Dream | Hondaku</title>
         <meta
           name="description"
-          content="Dapatkan informasi lengkap seputar pembelian mobil Honda terbaru disini."
+          content="Dapatkan informasi lengkap seputar pembelian cash dan kredit mobil Honda terbaru disini."
         />
       </Head>
       <Stack maxW="100%" align="center" spacing="0">
