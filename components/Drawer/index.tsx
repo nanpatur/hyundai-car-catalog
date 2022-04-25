@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Divider,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -8,6 +9,7 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  HStack,
   Input,
   Spacer,
   Stack,
@@ -15,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { getWhatsappLink } from "../../utils/whatsappLink";
 
 interface MenuDrawerProps {
@@ -122,6 +125,22 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
                 HUBUNGI KAMI
               </Text>
             </Box>
+            <br />
+            <Divider />
+            <Stack p='16px'>
+              <HStack spacing='12px'>
+                <FaMapMarkerAlt size='16px' />
+                <Box>
+                  <Text fontSize='12px' fontWeight='bold'>Jl. Soekarno Hatta No. 368 Bandung 40235</Text>
+                </Box>
+              </HStack>
+              <HStack spacing='12px'>
+                <FaPhoneAlt size='16px' />
+                <Box>
+                  <Text fontSize='12px' fontWeight='bold'>082128798554</Text>
+                </Box> 
+              </HStack>
+            </Stack>
           </Stack>
         </DrawerBody>
       </DrawerContent>

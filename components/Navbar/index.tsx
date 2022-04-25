@@ -24,6 +24,13 @@ export default function Navbar() {
                 <Text fontSize='16px' fontWeight='bold' color='#fff'>Jl. Soekarno Hatta No. 368 Bandung 40235</Text>
               </Box>
             </HStack>
+            <HStack spacing='12px' display={{ base: 'none', lg: 'flex' }}>
+              <FaPhoneAlt color='#fff' size='24px' />
+              <Box>
+                <Text fontSize='10px' fontWeight='bold' color='#fff'>HANDPHONE:</Text>
+                <Text fontSize='16px' fontWeight='bold' color='#fff'>082128798554</Text>
+              </Box> 
+            </HStack>
             <Box display={{ base: 'block', lg: 'none' }}>
               <FaBars color='#fff' size='24px' onClick={onOpenMenu} />
             </Box>

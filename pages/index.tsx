@@ -190,6 +190,7 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
                 color="#ec162b"
                 size="lg"
                 borderRadius="full"
+                onClick={() => openWhatsappLink('Info promo Honda')}
               >
                 Ambil Promo
               </Button>
@@ -306,10 +307,10 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
           <Container maxW="container.lg">
             <Stack align="center" w="full" color="#fff">
               <FaTools size="80px" />
-              <Text fontWeight="bold" fontSize="40px">
+              <Text fontWeight="bold" fontSize="40px" textAlign='center'>
                 Sparepart dan Aksesories
               </Text>
-              <Text fontWeight="bold" fontSize="20px">
+              <Text fontWeight="bold" fontSize="20px" textAlign='center'>
                 Menyediakan berbagai jenis Sparepart dan Aksesories mobil Honda
                 lengkap dan berkualitas
               </Text>
