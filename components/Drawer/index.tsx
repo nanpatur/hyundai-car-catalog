@@ -33,7 +33,7 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader>Hondaku</DrawerHeader>
+        <DrawerHeader>Hyundai Gowa Bandung</DrawerHeader>
 
         <DrawerBody>
           <Stack h="100%" spacing="0">
@@ -50,11 +50,11 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
                 Beranda
               </Text>
             </Link>
-            <Link href="/katalog-mobil" passHref>
+            <Link href="/daftar-harga" passHref>
               <Text
                 onClick={onClose}
                 bg={
-                  router.pathname.startsWith("/katalog-mobil") ? "#eee" : "transparent"
+                  router.pathname.startsWith("/daftar-harga") ? "#eee" : "transparent"
                 }
                 fontSize="16px"
                 fontWeight="bold"
@@ -62,40 +62,10 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
                 cursor="pointer"
                 _hover={{ bg: "#eee" }}
               >
-                Katalog Mobil
+                Daftar Harga
               </Text>
             </Link>
-            <Link href="/simulasi-kredit" passHref>
-              <Text
-                onClick={onClose}
-                bg={
-                  router.pathname.startsWith("/simulasi-kredit")
-                    ? "#eee"
-                    : "transparent"
-                }
-                fontSize="16px"
-                fontWeight="bold"
-                p="16px"
-                cursor="pointer"
-                _hover={{ bg: "#eee" }}
-              >
-                Simulasi Kredit
-              </Text>
-            </Link>
-            <Link href="/test-drive" passHref>
-              <Text
-                onClick={onClose}
-                bg={router.pathname.startsWith("/test-drive") ? "#eee" : "transparent"}
-                fontSize="16px"
-                fontWeight="bold"
-                p="16px"
-                cursor="pointer"
-                _hover={{ bg: "#eee" }}
-              >
-                Test Drive
-              </Text>
-            </Link>
-            <Link href="/sparepart" passHref>
+            <Link href="/kontak" passHref>
               <Text
                 onClick={onClose}
                 bg={router.pathname.startsWith("/sparepart") ? "#eee" : "transparent"}
@@ -105,12 +75,12 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
                 cursor="pointer"
                 _hover={{ bg: "#eee" }}
               >
-                Sparepart
+                Kontak
               </Text>
             </Link>
             <Spacer />
             <Box
-              bg="#ec162b"
+              bg="#152D67"
               borderRadius="8px"
               onClick={() => window.open(getWhatsappLink(""), "_blank")}
             >
@@ -126,21 +96,6 @@ const MenuDrawer = ({ isOpen, onClose }: MenuDrawerProps) => {
               </Text>
             </Box>
             <br />
-            <Divider />
-            <Stack p='16px'>
-              <HStack spacing='12px'>
-                <FaMapMarkerAlt size='16px' />
-                <Box>
-                  <Text fontSize='12px' fontWeight='bold'>Jl. Soekarno Hatta No. 368 Bandung 40235</Text>
-                </Box>
-              </HStack>
-              <HStack spacing='12px'>
-                <FaPhoneAlt size='16px' />
-                <Box>
-                  <Text fontSize='12px' fontWeight='bold'>082128798554</Text>
-                </Box> 
-              </HStack>
-            </Stack>
           </Stack>
         </DrawerBody>
       </DrawerContent>

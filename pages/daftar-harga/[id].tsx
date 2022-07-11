@@ -72,10 +72,10 @@ export default function DetailMobil({ carData }: any) {
   return (
     <>
       <Head>
-        <title>{carData.name} | Hondaku</title>
+        <title>{carData.name} | Hyundai Gowa Bandung</title>
         <meta
           name="description"
-          content={`Informasi lengkap mobil Honda ${carData.name}`}
+          content={`Informasi lengkap mobil Hyundai ${carData.name}`}
         />
       </Head>
       <Container maxW="container.lg" py="24px">

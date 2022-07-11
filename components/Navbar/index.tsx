@@ -10,54 +10,24 @@ export default function Navbar() {
 
   return (
     <Stack w='100%' spacing={0}>
-      <Box bg='#333'>
+      <Box bg='#fff' shadow='sm'>
         <Container maxW='container.lg'>
           <HStack h='100%' py='20px' spacing='32px'>
-            <Box position='relative' height={{ base: '40px', lg: '60px' }} width={{ base: '146px', lg: '220px' }}>
-              <Image src='/images/honda-logo.png' alt='logo' layout='fill' />
-            </Box>
+            <Image src='/images/hyundai-logo.png' alt='logo' height={48} width={300} />
             <Spacer />
-            <HStack spacing='12px' display={{ base: 'none', lg: 'flex' }}>
-              <FaMapMarkerAlt color='#fff' size='24px' />
-              <Box>
-                <Text fontSize='10px' fontWeight='bold' color='#fff'>ALAMAT:</Text>
-                <Text fontSize='16px' fontWeight='bold' color='#fff'>Jl. Soekarno Hatta No. 368 Bandung 40235</Text>
-              </Box>
-            </HStack>
-            <HStack spacing='12px' display={{ base: 'none', lg: 'flex' }}>
-              <FaPhoneAlt color='#fff' size='24px' />
-              <Box>
-                <Text fontSize='10px' fontWeight='bold' color='#fff'>HANDPHONE:</Text>
-                <Text fontSize='16px' fontWeight='bold' color='#fff'>082128798554</Text>
-              </Box> 
+            <HStack spacing='0' display={{ base: 'none', lg: 'flex' }}>
+              <Link href='/' passHref>
+                <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Beranda</Text>
+              </Link>
+              <Link href='/daftar-harga' passHref>
+                <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Daftar Harga</Text>
+              </Link>
+              <Link href='/kontak' passHref>
+                <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Kontak</Text>
+              </Link>
             </HStack>
             <Box display={{ base: 'block', lg: 'none' }}>
-              <FaBars color='#fff' size='24px' onClick={onOpenMenu} />
-            </Box>
-          </HStack>
-        </Container>
-      </Box>
-      <Box shadow='0 0 4px rgb(0 0 0 / 40%)' display={{ base: 'none', lg: 'block' }} bg='#fff'>
-        <Container maxW='container.lg'>
-          <HStack h='100%' spacing='0'>
-            <Link href='/' passHref>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Beranda</Text>
-            </Link>
-            <Link href='/katalog-mobil' passHref>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Katalog Mobil</Text>
-            </Link>
-            <Link href='/simulasi-kredit' passHref>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Simulasi Kredit</Text>
-            </Link>
-            <Link href='/test-drive' passHref>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Test Drive</Text>
-            </Link>
-            <Link href='/sparepart' passHref>
-              <Text fontSize='16px' fontWeight='bold' p='16px' cursor='pointer' _hover={{ bg: '#eee'}}>Sparepart</Text>
-            </Link>
-            <Spacer />
-            <Box bg='#ec162b' onClick={() => window.open(getWhatsappLink(''), '_blank')}>
-              <Text fontSize='16px' fontWeight='bold' p='16px' color='#fff' cursor='pointer'>HUBUNGI KAMI</Text>
+              <FaBars size='24px' onClick={onOpenMenu} />
             </Box>
           </HStack>
         </Container>

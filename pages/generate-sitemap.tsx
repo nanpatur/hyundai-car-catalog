@@ -7,10 +7,10 @@ const Sitemap = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-    const BASE_URL = 'https://www.hondakudealerbandung.com'; //This is where you will define your base url. You can also use the default dev url http://localhost:3000
+    const BASE_URL = 'http://localhost:3000'; //This is where you will define your base url. You can also use the default dev url http://localhost:3000
 
     const carList = await axios.get(
-      "https://script.google.com/macros/s/AKfycbwVAHTmnoQ6ItpkMwysbff3khZgiBxTvS9uEQGx6xEyt7p2RBP3PFeYBGQ5tUsAU5U/exec?action=read&table=mobil"
+      "https://script.google.com/macros/s/AKfycbz7TJ2xY0a7cpVuptK95cza05IqYfHwFPLPQE5vpMjMS77rLYVJUJJILgAS6KYWSDlq/exec?action=read&table=mobil"
     );
     const carListGrouped = carList.data.data.reduce(
       (objectsByKeyValue: any, obj: any) => {
@@ -24,7 +24,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     )
 
     const dynamicPaths = Object.keys(carListGrouped).map(key => {
-      return `${BASE_URL}/katalog-mobil/${key}`
+      return `${BASE_URL}/daftar-harga/${key}`
     })
 
     const staticPaths = fs

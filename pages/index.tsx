@@ -36,15 +36,17 @@ import { openWhatsappLink } from "../utils/whatsappLink";
 
 const SplitWithImage = () => {
   return (
-    <Container maxW="container.lg" py={{ base: "40px", lg: "80px" }}>
+    <Container maxW="container.lg" py={{ base: "40px", lg: "80px" }} px={{ base: '24px', lg: '32px' }}>
       <Stack direction={{ base: "column", md: "row" }} spacing={12}>
         <Stack spacing={0} minW="55%">
-          <Heading>Cash dan Kredit</Heading>
-          <Heading color="#ec162b">Mobil Honda</Heading>
+          <Heading>
+            Siap Melayani Pembelian <br />
+            Mobil Hyundai
+          </Heading>
           <Grid templateColumns={"repeat(2, 1fr)"} gap={8} pt={8}>
             <GridItem p="16px" bg="#fff" shadow="0 10px 20px rgb(0 0 0 / 8%)">
               <Stack spacing="12px">
-                <FaDollarSign size="32px" color="#ec162b" />
+                <FaDollarSign size="32px" color="#152D67" />
                 <Text fontWeight="bold" fontSize="18px">
                   DP Ringan
                 </Text>
@@ -52,7 +54,7 @@ const SplitWithImage = () => {
             </GridItem>
             <GridItem p="16px" bg="#fff" shadow="0 10px 20px rgb(0 0 0 / 8%)">
               <Stack spacing="12px">
-                <FaWallet size="32px" color="#ec162b" />
+                <FaWallet size="32px" color="#152D67" />
                 <Text fontWeight="bold" fontSize="18px">
                   Pembayaran Mudah
                 </Text>
@@ -60,7 +62,7 @@ const SplitWithImage = () => {
             </GridItem>
             <GridItem p="16px" bg="#fff" shadow="0 10px 20px rgb(0 0 0 / 8%)">
               <Stack spacing="12px">
-                <FaRegHandshake size="32px" color="#ec162b" />
+                <FaRegHandshake size="32px" color="#152D67" />
                 <Text fontWeight="bold" fontSize="18px">
                   Proses Cepat
                 </Text>
@@ -68,7 +70,7 @@ const SplitWithImage = () => {
             </GridItem>
             <GridItem p="16px" bg="#fff" shadow="0 10px 20px rgb(0 0 0 / 8%)">
               <Stack spacing="12px">
-                <FaCarSide size="32px" color="#ec162b" />
+                <FaCarSide size="32px" color="#152D67" />
                 <Text fontWeight="bold" fontSize="18px">
                   Free Testdrive
                 </Text>
@@ -93,13 +95,13 @@ const SplitWithImage = () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const bannerList = await axios.get(
-    "https://script.google.com/macros/s/AKfycbwVAHTmnoQ6ItpkMwysbff3khZgiBxTvS9uEQGx6xEyt7p2RBP3PFeYBGQ5tUsAU5U/exec?action=read&table=banner"
+    "https://script.google.com/macros/s/AKfycbz7TJ2xY0a7cpVuptK95cza05IqYfHwFPLPQE5vpMjMS77rLYVJUJJILgAS6KYWSDlq/exec?action=read&table=banner"
   );
   const carList = await axios.get(
-    "https://script.google.com/macros/s/AKfycbwVAHTmnoQ6ItpkMwysbff3khZgiBxTvS9uEQGx6xEyt7p2RBP3PFeYBGQ5tUsAU5U/exec?action=read&table=mobil"
+    "https://script.google.com/macros/s/AKfycbz7TJ2xY0a7cpVuptK95cza05IqYfHwFPLPQE5vpMjMS77rLYVJUJJILgAS6KYWSDlq/exec?action=read&table=mobil"
   );
   const testimoniList = await axios.get(
-    "https://script.google.com/macros/s/AKfycbwVAHTmnoQ6ItpkMwysbff3khZgiBxTvS9uEQGx6xEyt7p2RBP3PFeYBGQ5tUsAU5U/exec?action=read&table=testimoni"
+    "https://script.google.com/macros/s/AKfycbz7TJ2xY0a7cpVuptK95cza05IqYfHwFPLPQE5vpMjMS77rLYVJUJJILgAS6KYWSDlq/exec?action=read&table=testimoni"
   );
   return {
     props: {
@@ -117,6 +119,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
                   obj["picture_url"].split(";")
                 )
               : objectsByKeyValue[value]?.picture_urls || [],
+            is_new: obj["is_new"] || objectsByKeyValue[value]?.is_new || false,
+            is_upcoming: obj["is_upcoming"] || objectsByKeyValue[value]?.is_upcoming || false
           };
           return objectsByKeyValue;
         },
@@ -130,7 +134,6 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
   const router = useRouter();
   const carList = Object.keys(carListGrouped)
     .map((key) => carListGrouped[key])
-    .slice(0, 3);
   const formatCurrency = new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -140,73 +143,24 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
   return (
     <>
       <Head>
-        <title>Honda Indonesia The Power Of Dream | Hondaku</title>
+        <title>Hyundai Gowa Motor | Bandung</title>
         <meta
           name="description"
-          content="Dapatkan informasi lengkap seputar pembelian cash dan kredit mobil Honda terbaru disini."
+          content="Dapatkan informasi lengkap seputar pembelian cash dan kredit mobil Hyundai terbaru disini."
         />
       </Head>
       <Stack maxW="100%" align="center" spacing="0">
         <CaptionCarousel bannerList={bannerList} />
-        <Center
-          w="full"
-          backgroundImage="url(https://smartdata.tonytemplates.com/caleader/wp-content/themes/caleader/assets/images/wrapper-section/wrapper-section-01.png)"
-        >
-          <SplitWithImage />
-        </Center>
-        <Center bg="#ec162b" w="100%" py={{ base: "12px", lg: "16px" }}>
-          <Container maxW="container.lg">
-            <Stack
-              direction={{ base: "column", lg: "row" }}
-              spacing={{ base: "8px", lg: "24px" }}
-              align="center"
-            >
-              <Box display={{ base: "none", lg: "block" }}>
-                <FaPercentage size="60px" color="#fff" />
-              </Box>
-              <Box>
-                <Text
-                  color="#fff"
-                  fontSize="32px"
-                  fontWeight="bold"
-                  align={{ base: "center", lg: "left" }}
-                >
-                  Promo 2022
-                </Text>
-                <Text
-                  color="#fff"
-                  fontSize="14px"
-                  align={{ base: "center", lg: "left" }}
-                >
-                  Pajak PPnBM 0 persen, turun harga mobil baru hingga Rp 21
-                  juta. DP & angsuran ringan FREE Test Car & Free konsultasi
-                  simulasi kredit
-                </Text>
-              </Box>
-              <Spacer />
-              <Button
-                variant="solid"
-                bg="#fff"
-                color="#ec162b"
-                size="lg"
-                borderRadius="full"
-                onClick={() => openWhatsappLink('Info promo Honda')}
-              >
-                Ambil Promo
-              </Button>
-            </Stack>
-          </Container>
-        </Center>
-        <Center w="100%" py="40px" bg="#f7f7f7">
-          <Container maxW="container.lg">
+        <Center w="100%" py="40px" bg="#E4E5E6" p={{ base: '24px', lg: "32px" }}>
+          <Container maxW="container.lg" bg='#fff' py={{ base: '24px', lg: "32px" }} px={{ base: '8px', lg: "32px" }}>
             <Stack spacing="24px">
-              <Text fontSize="32px" fontWeight="bold" align="center">
-                PILIHAN MOBIL
+              <Text fontSize={"32px"} fontWeight="bold" align="center">
+                MODEL
               </Text>
               <Grid
                 templateColumns={{
-                  base: "repeat(1, 1fr)",
-                  lg: "repeat(3, 1fr)",
+                  base: "repeat(2, 1fr)",
+                  lg: "repeat(4, 1fr)",
                 }}
                 gap={3}
               >
@@ -214,11 +168,9 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
                   <GridItem
                     key={car}
                     w="100%"
-                    bg="#fff"
-                    shadow="sm"
                     overflow="hidden"
                   >
-                    <Stack spacing="0">
+                    <Stack spacing="0" textAlign="center">
                       <Center>
                         <Box
                           backgroundImage={`url(${car.picture_urls[0]})`}
@@ -226,57 +178,45 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
                           backgroundPosition="center"
                           backgroundRepeat="no-repeat"
                           width="80%"
-                          height="150px"
-                        />
-                      </Center>
-                      <HStack>
-                        <Text
-                          fontSize="16px"
-                          fontWeight="bold"
-                          pl="12px"
-                          noOfLines={2}
-                        >
-                          {car.name}
-                        </Text>
-                        <Spacer />
-                        <Box
-                          color="#fff"
-                          p="8px"
+                          height="100px"
                           position="relative"
-                          overflow="hidden"
-                          width=""
-                          h="60px"
-                          minW="150px"
                         >
-                          <Center
-                            h="full"
-                            w="full"
-                            position="absolute"
-                            zIndex="9"
-                            p="12px"
-                            top="0"
-                            right="0"
-                          >
-                            <Box align="right" w="full">
-                              <Text fontSize="10px">Mulai dari</Text>
-                              <Text fontSize="16px" fontWeight="bold">
-                                {formatCurrency.format(
-                                  car.types[0].price_mt ||
-                                    car.types[0].price_cvt
-                                )}
-                              </Text>
-                            </Box>
-                          </Center>
-                          <Box
-                            bg="#ec162b"
-                            transform="skewX(-15deg)"
-                            h="full"
-                            w="full"
-                            position="absolute"
-                            top="0"
-                          ></Box>
+                          {
+                            car.is_new && (
+                                <Text
+                                  position='absolute'
+                                  background='#00aad2'
+                                  color='#fff'
+                                  width='70px'
+                                  fontSize='12px'
+                                >
+                                  New
+                                </Text>
+                            )
+                          }
+                          {
+                            car.is_upcoming && (
+                                <Text
+                                  position='absolute'
+                                  background='#999'
+                                  color='#fff'
+                                  width='70px'
+                                  fontSize='12px'
+                                >
+                                  Upcoming
+                                </Text>
+                            )
+                          }
                         </Box>
-                      </HStack>
+                      </Center>
+                      <Text
+                        fontSize="16px"
+                        fontWeight="bold"
+                        pl="12px"
+                        noOfLines={2}
+                      >
+                        {car.name}
+                      </Text>
                     </Stack>
                   </GridItem>
                 ))}
@@ -285,11 +225,15 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
                 <Button
                   colorScheme="black"
                   variant="outline"
+                  background='#152D67'
+                  color='#fff'
+                  size='lg'
+                  fontWeight='normal'
                   onClick={() =>
-                    router.push("/katalog-mobil", undefined, { scroll: true })
+                    router.push("/daftar-harga", undefined, { scroll: true })
                   }
                 >
-                  Lihat Semua Mobil
+                  Lihat Semua Model
                 </Button>
               </Center>
             </Stack>
@@ -297,36 +241,10 @@ const Home: NextPage = ({ bannerList, carListGrouped, testimoniList }: any) => {
         </Center>
         <Center
           w="full"
-          h="500px"
-          backgroundImage="linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(https://img.freepik.com/photos-gratuite/fond-atelier-voiture_23-2147897921.jpg?size=626&ext=jpg)"
-          backgroundSize="cover"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          // backgroundAttachment='fixed'
+          backgroundImage="url(https://smartdata.tonytemplates.com/caleader/wp-content/themes/caleader/assets/images/wrapper-section/wrapper-section-01.png)"
         >
-          <Container maxW="container.lg">
-            <Stack align="center" w="full" color="#fff">
-              <FaTools size="80px" />
-              <Text fontWeight="bold" fontSize="40px" textAlign='center'>
-                Sparepart dan Aksesories
-              </Text>
-              <Text fontWeight="bold" fontSize="20px" textAlign='center'>
-                Menyediakan berbagai jenis Sparepart dan Aksesories mobil Honda
-                lengkap dan berkualitas
-              </Text>
-              <Spacer />
-              <Button
-                size="lg"
-                borderRadius="0"
-                colorScheme={"red"}
-                onClick={() => openWhatsappLink("Info Sparepart dan Aksesories")}
-              >
-                Hubungi Kami
-              </Button>
-            </Stack>
-          </Container>
+          <SplitWithImage />
         </Center>
-        {testimoniList.length && <Testimonial testimoniList={testimoniList} />}
       </Stack>
     </>
   );

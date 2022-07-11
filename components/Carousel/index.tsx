@@ -88,7 +88,7 @@ export default function Carousel({ bannerList }: any) {
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={{base: '220px', lg: 'calc(100vh - 156px)', '2xl': '800px'}}
+            height={{base: '160px', lg: '550px', '2xl': '800px'}}
             position="relative"
           >
             <Image

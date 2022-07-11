@@ -4,7 +4,7 @@ import Navbar from "../Navbar";
 
 export default function Layout({ children }: any) {
   return (
-    <Stack w='100%' maxW='100%' minH='100vh' bg='#f7fafc' spacing={0} align='center' overflow='auto'>
+    <Stack w='100%' maxW='100%' minH='100vh' bg='#E4E5E6' spacing={0} align='center' overflow='auto'>
       <Navbar />
       {children}
       <Spacer />

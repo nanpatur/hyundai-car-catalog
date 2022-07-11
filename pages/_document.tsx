@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <meta
           name="keywords"
-          content="mobil honda,mobil bandung,honda bandung,honda promo,honda terbaru,honda terlengkap,honda termurah,honda terbaru bandung,honda terbaru"
+          content="mobil hyundai,mobil bandung,hyundai bandung,hyundai promo,hyundai terbaru,hyundai terlengkap,hyundai termurah,hyundai terbaru bandung,hyundai terbaru"
         />
         <meta
           name="google-site-verification"
